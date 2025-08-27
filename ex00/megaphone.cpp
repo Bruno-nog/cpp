@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:59:34 by brunogue          #+#    #+#             */
-/*   Updated: 2025/08/25 17:41:40 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/08/25 19:10:30 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void print_in_uppercase(char *input, int i)
 {
 	if (!input)
-	return ;
-	if (i > 0)
+		return ;
+	if ((!i) > 0)
 		std::cout << " ";
 	int j = 0;
-	while (input)
+	while (input[j] != '\0')
 	{
-		std::cout << toupper(input[i]);
-		i++;
+		std::cout << (char)toupper(input[j]);
+		j++;
 	}
 }
 
@@ -38,6 +38,7 @@ int main (int ac, char **av)
 	{
 		while (++i < ac)
 			print_in_uppercase(av[i], i);
+		std::cout << std::endl;
 	}
 	return (0);
 }
