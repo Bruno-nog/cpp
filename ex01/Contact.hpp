@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/08/27 18:56:35 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/01 17:37:53 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Contact
         std::string getFirstName() const;
         std::string getLastName() const;
         std::string getNickName() const;
-        std::string getPhoneNumber() const;
+        int getPhoneNumber() const;
         std::string getDarkestSecret() const;
         
         bool isEmpty() const;
