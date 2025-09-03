@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/01 17:37:53 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/03 18:41:42 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,15 @@
 class Contact
 {
     private:
-        std::string first_name;
-        std::string last_name;
-        std::string nickname;
-        std::string phone_number;
-        std::string darkest_secret;
+        std::string firstName;
+        std::string lastName;
+        std::string nickName;
+        std::string phoneNumber;
+        std::string darkestSecret;
         
     public:
         Contact();
-        
-        void Contacts(const std::string& fn,
-                      const std::string& ln,
-                      const std::string& nn,
-                      const std::string& pn,
-                      const std::string& ds);
+		Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
 
         std::string getFirstName() const;
         std::string getLastName() const;
@@ -39,7 +34,11 @@ class Contact
         int getPhoneNumber() const;
         std::string getDarkestSecret() const;
         
-        bool isEmpty() const;
+		void	setFirstName(std::string firstName);
+		void	setLastName(std::string lastName);
+		void	setNickName(std::string nickName);
+		void	setPhoneNumber(int phoneNumber);
+		void	setDarkestSecret(std::string darkestSecret);
 };
 
 #endif
