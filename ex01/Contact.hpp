@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/03 18:41:42 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/09 17:47:16 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
 
 class Contact
 {
