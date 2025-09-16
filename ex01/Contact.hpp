@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/09 17:47:16 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:55:17 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ class Contact
         std::string getFirstName() const;
         std::string getLastName() const;
         std::string getNickName() const;
-        int getPhoneNumber() const;
+        std::string getPhoneNumber() const;
         std::string getDarkestSecret() const;
         
 		void	setFirstName(std::string firstName);
 		void	setLastName(std::string lastName);
 		void	setNickName(std::string nickName);
-		void	setPhoneNumber(int phoneNumber);
+		void	setPhoneNumber(std::string phoneNumber);
 		void	setDarkestSecret(std::string darkestSecret);
 };
 
