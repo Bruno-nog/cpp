@@ -6,12 +6,13 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/17 18:10:07 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/17 19:55:06 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
@@ -84,5 +85,15 @@ void PhoneBook::addContact()
 void PhoneBook::searchContact() const {
     if (totalContacts == 0){
         std::cout << "None contacts saved" << std::endl;
+    }
+    std::cout <<"\n LIST OF CONTACTS" << std::endl;
+    
+    std::cout << std::setw(10) << "Index" << "|";
+    std::cout << std::setw(10) << "Name" << "|";
+    std::cout << std::setw(10) << "Last name" << "|";
+    std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
+
+    for (int i = 0; i < totalContacts; i++) {
+        std::cout << std::setw(10) << i << "|";
     }
 }
