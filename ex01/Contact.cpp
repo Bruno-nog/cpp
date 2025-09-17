@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 19:23:30 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/09 17:45:03 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:33:45 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 Contact::Contact(){}
 
-Contact::Contact(const std::string& firstName, const std::string& lastName,
-                const std::string& nickName, const std::string& phoneNumber, const std::string& darkestSecret)
+Contact::Contact(std::string& firstName, std::string& lastName, std::string& nickName, std::string& phoneNumber, std::string& darkestSecret)
 {
     this->firstName = firstName;
     this->nickName = nickName;
@@ -51,26 +50,30 @@ std::string Contact::getDarkestSecret() const
 
 // Setters
 
-void Contact::setFirstName(const std::string& firstName)
+void Contact::setFirstName(std::string& firstName)
 {
     this->firstName = firstName;
 }
 
-void Contact::setNickName(const std::string& nickName)
+void Contact::setNickName(std::string& nickName)
 {
     this->nickName = nickName;
 }
 
-void Contact::setLastName(const std::string& lastName)
+void Contact::setLastName(std::string& lastName)
 {
     this->lastName = lastName;
 }
 
-void Contact::setPhoneNumber(const std::string& phoneNumber)
+void Contact::setPhoneNumber(std::string& phoneNumber)
 {
     this->phoneNumber = phoneNumber;
 }
 
+void Contact::setDarkestSecret(std::string& darkestSecret)
+{
+    this->darkestSecret = darkestSecret;
+}
 
 bool Contact::isEmpty() const
 {

@@ -6,13 +6,13 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/16 17:28:05 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/17 18:10:07 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
 #include <iostream>
 #include <sstream>
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -20,7 +20,7 @@ PhoneBook::PhoneBook()
     totalContacts = 0;
 }
 
-void PhoneBook::phoneBook_ADD()
+void PhoneBook::addContact()
 {
     std::string input;
     Contact newContact;
@@ -79,4 +79,10 @@ void PhoneBook::phoneBook_ADD()
         totalContacts++;
     }
     std::cout << "Successfully added contact in position " << insertIndex << "!" << std::endl;
+}
+
+void PhoneBook::searchContact() const {
+    if (totalContacts == 0){
+        std::cout << "None contacts saved" << std::endl;
+    }
 }

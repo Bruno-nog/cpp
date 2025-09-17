@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:16:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/16 17:28:17 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/17 16:37:40 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class PhoneBook
         Contact contactList[8];
         int     currentIndex;
         int     totalContacts;
+        int     contactCount;
 
     public:
         PhoneBook();
