@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/17 19:55:06 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:32:35 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void PhoneBook::addContact()
 }
 
 void PhoneBook::searchContact() const {
+    
     if (totalContacts == 0){
         std::cout << "None contacts saved" << std::endl;
     }
@@ -95,5 +96,31 @@ void PhoneBook::searchContact() const {
 
     for (int i = 0; i < totalContacts; i++) {
         std::cout << std::setw(10) << i << "|";
+        printFormatted(contactList[i].getFirstName());
+        std::cout << "|";
+        printFormatted(contactList[i].getLastName());
+        std::cout << "|";
+        printFormatted(contactList[i].getNickName());
+        std::cout << std::endl;
     }
+    
+    std::string input;
+    
+    int index;
+    
+    std::cout << "Digit a index of contact to see details";
+    std::getline(std::cin, input);
+
+    std::stringstream ss(input);
+    if (!(ss >> index) || index < 0 || index > totalContacts) {
+        std::cout << "Invalid index! Digit number between 0 and " << (totalContacts - 1) << std::endl;
+        return ;
+    }
+    
+    std::cout << " Contact details " << index << std::endl;
+    std::cout << "Name: " << contactList[index].getFirstName() << std::endl;
+    std::cout << "Last name: " << contactList[index].getLastName() << std::endl;
+    std::cout << "Nickname: " << contactList[index].getNickName() << std::endl;
+    std::cout << "Phone number: " << contactList[index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << contactList[index].getDarkestSecret() << std::endl;
 }
