@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/18 17:39:07 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 18:03:55 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void PhoneBook::searchContact() const {
     std::cout << std::setw(10) << "Name" << " ▏";
     std::cout << std::setw(10) << "Last name" << " ▏";
     std::cout << std::setw(10) << "Nickname" << std::endl;
-
+    std::cout << "     -----------------------------------------" << std::endl;
+    
     for (int i = 0; i < totalContacts; i++) {
         std::cout << std::setw(10) << i << " ▏";
         PhoneBook::printFormatted(contactList[i].getFirstName());
@@ -104,6 +105,7 @@ void PhoneBook::searchContact() const {
         std::cout << std::endl;
     }
     
+    std::cout << "\n";
     std::string input;
     
     int index;
