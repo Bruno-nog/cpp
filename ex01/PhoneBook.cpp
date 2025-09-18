@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/18 16:32:35 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:39:07 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,20 +87,20 @@ void PhoneBook::searchContact() const {
     if (totalContacts == 0){
         std::cout << "None contacts saved" << std::endl;
     }
-    std::cout <<"\n LIST OF CONTACTS" << std::endl;
+    std::cout <<"\n  ▶ LIST OF CONTACTS \n " << std::endl;
     
-    std::cout << std::setw(10) << "Index" << "|";
-    std::cout << std::setw(10) << "Name" << "|";
-    std::cout << std::setw(10) << "Last name" << "|";
-    std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
+    std::cout << std::setw(10) << "Index" << " ▏";
+    std::cout << std::setw(10) << "Name" << " ▏";
+    std::cout << std::setw(10) << "Last name" << " ▏";
+    std::cout << std::setw(10) << "Nickname" << std::endl;
 
     for (int i = 0; i < totalContacts; i++) {
-        std::cout << std::setw(10) << i << "|";
-        printFormatted(contactList[i].getFirstName());
-        std::cout << "|";
-        printFormatted(contactList[i].getLastName());
-        std::cout << "|";
-        printFormatted(contactList[i].getNickName());
+        std::cout << std::setw(10) << i << " ▏";
+        PhoneBook::printFormatted(contactList[i].getFirstName());
+        std::cout << " ▏";
+        PhoneBook::printFormatted(contactList[i].getLastName());
+        std::cout << " ▏";
+        PhoneBook::printFormatted(contactList[i].getNickName());
         std::cout << std::endl;
     }
     
@@ -108,7 +108,7 @@ void PhoneBook::searchContact() const {
     
     int index;
     
-    std::cout << "Digit a index of contact to see details";
+    std::cout << "Digit a index of contact to see detail\n";
     std::getline(std::cin, input);
 
     std::stringstream ss(input);
@@ -123,4 +123,17 @@ void PhoneBook::searchContact() const {
     std::cout << "Nickname: " << contactList[index].getNickName() << std::endl;
     std::cout << "Phone number: " << contactList[index].getPhoneNumber() << std::endl;
     std::cout << "Darkest secret: " << contactList[index].getDarkestSecret() << std::endl;
+}
+
+std::string PhoneBook::truncateString(const std::string& str) const {
+    if (str.length() > 10) {
+        return str.substr(0, 9) + ".";
+    }
+    return str;
+}
+
+void PhoneBook::printFormatted(const std::string& str) const {
+    
+    std::string formatted = truncateString(str);
+    std::cout << std::setw(10) << formatted;
 }

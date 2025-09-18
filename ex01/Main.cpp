@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:29:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/17 16:37:18 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:17:53 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
             phoneBook.addContact();
         }
         else if (command == "SEARCH") {
-            phoneBook.addContact();
+            phoneBook.searchContact();
         }
         else if (command == "EXIT") {
             std::cout << "Bye! all contacts will be lost forever!" << std::endl;
