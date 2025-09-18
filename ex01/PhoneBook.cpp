@@ -6,13 +6,14 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/18 18:03:55 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:40:12 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
@@ -55,13 +56,24 @@ void PhoneBook::addContact()
     } while (input.empty());
     newContact.setNickName(input);
 
-    do {
+    while (true)
+    {
         std::cout << "phoneNumber: ";
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput error. Aborting add contact." << std::endl;
+            return;
+        }
         if (input.empty()) {
             std::cout << "Phone number cannot be empty! Try again." << std::endl;
+            continue;
         }
-    } while (input.empty());
+        if (!phoneNumberVerification(input)) {
+            std::cout << "Phone number must contain only digits. Try again." << std::endl;
+            continue;
+        }
+        break;
+    }
     newContact.setPhoneNumber(input);
 
     do {
@@ -125,6 +137,23 @@ void PhoneBook::searchContact() const {
     std::cout << "Nickname: " << contactList[index].getNickName() << std::endl;
     std::cout << "Phone number: " << contactList[index].getPhoneNumber() << std::endl;
     std::cout << "Darkest secret: " << contactList[index].getDarkestSecret() << std::endl;
+}
+
+
+bool PhoneBook::phoneNumberVerification(const std::string& s) const {
+    if (s.empty()) {
+        return false;
+    }
+  
+    for (std::string::const_iterator it = s.begin(); it != s.end(); ++it)
+    {
+        // cast para unsigned char para evitar comportamento indefinido em chars negativos
+        if (!std::isdigit(static_cast<unsigned char>(*it)))
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 std::string PhoneBook::truncateString(const std::string& str) const {

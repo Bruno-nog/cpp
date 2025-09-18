@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:16:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/18 17:17:06 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:24:19 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class PhoneBook
         void    addContact();
         void    searchContact() const;
 
+        bool phoneNumberVerification(const std::string& s) const;
         std::string truncateString(const std::string& str) const;
         void    printFormatted(const std::string& str) const;
 };
