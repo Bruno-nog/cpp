@@ -6,14 +6,13 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/19 15:06:48 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/19 20:10:45 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include <algorithm>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()

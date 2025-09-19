@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:29:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/19 17:20:01 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/19 19:31:54 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main()
     PhoneBook phoneBook;
     std::string command;
 
-    std::cout << " AWESOME PHONEBOOK " << std::endl;
+    std::cout << " PHONEBOOK " << std::endl;
     std::cout << " commands: ADD, SEARCH, EXIT" << std::endl;
-    
+
     while(true) {
         std::cout << "\n> Enter a command: ";
         std::getline(std::cin, command);
