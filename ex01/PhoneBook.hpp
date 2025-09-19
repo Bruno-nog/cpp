@@ -6,14 +6,13 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:16:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/18 19:24:19 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/19 17:20:19 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
 #include "Contact.hpp"
 
 class PhoneBook
