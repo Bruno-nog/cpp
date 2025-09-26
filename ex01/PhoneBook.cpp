@@ -6,14 +6,17 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:11:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/09/19 20:10:45 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/09/26 19:25:22 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <sstream>
 #include <iomanip>
 #include "PhoneBook.hpp"
+#include <signal.h>
+#include <stdlib.h>
+#include <iostream>
+#include <stdio.h>
 
 PhoneBook::PhoneBook()
 {
@@ -28,33 +31,51 @@ void PhoneBook::addContact()
 
     std::cout << "\n ADDING NEW CONTACT..." << std::endl;
 
-    do {
+    while (true)
+    {
         std::cout << "first name: ";
-        std::getline(std::cin, input);
-        if (input.empty()) {
-            std::cout << "Name cannot be empty! Try again." << std::endl;
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput error. Aborting add contact." << std::endl;
+            return;
         }
-    } while (input.empty());
+        if (input.empty()) {
+            std::cout << "first name cannot be empty! Try again." << std::endl;
+            continue;
+        }
+        break;
+    }
     newContact.setFirstName(input);
-
-    do {
-        std::cout << "Last name: ";
-        std::getline(std::cin, input);
-        if (input.empty()) {
-            std::cout << "Last name cannot be empty! Try again." << std::endl;
+    while (true)
+    {
+        std::cout << "last name: ";
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput error. Aborting add contact." << std::endl;
+            return;
         }
-    } while (input.empty());
+        if (input.empty()) {
+            std::cout << "last name cannot be empty! Try again." << std::endl;
+            continue;
+        }
+        break;
+    }
     newContact.setLastName(input);
-
-    do {
-        std::cout << "Nick name: ";
-        std::getline(std::cin, input);
-        if (input.empty()) {
-            std::cout << "Nickname cannot be empty! Try again." << std::endl;
+    while (true)
+    {
+        std::cout << "nick name: ";
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput error. Aborting add contact." << std::endl;
+            return;
         }
-    } while (input.empty());
+        if (input.empty()) {
+            std::cout << "nick name cannot be empty! Try again." << std::endl;
+            continue;
+        }
+        break;
+    }
     newContact.setNickName(input);
-
     while (true)
     {
         std::cout << "phoneNumber: ";
@@ -74,14 +95,20 @@ void PhoneBook::addContact()
         break;
     }
     newContact.setPhoneNumber(input);
-
-    do {
-        std::cout << "darkestSecret: ";
-        std::getline(std::cin, input);
-        if (input.empty()) {
-            std::cout << "Darkest secret cannot be empty! Try again." << std::endl;
+    while (true)
+    {
+        std::cout << "darkest secret: ";
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\nInput error. Aborting add contact." << std::endl;
+            return;
         }
-    } while (input.empty());
+        if (input.empty()) {
+            std::cout << "darkest secret cannot be empty! Try again." << std::endl;
+            continue;
+        }
+        break;
+    }
     newContact.setDarkestSecret(input);
 
     int insertIndex = contactCount % 8;
@@ -115,21 +142,18 @@ void PhoneBook::searchContact() const {
         PhoneBook::printFormatted(contactList[i].getNickName());
         std::cout << std::endl;
     }
-
     std::cout << "\n";
     std::string input;
-
     int index;
 
     std::cout << "Digit a index of contact to see detail\n";
     std::getline(std::cin, input);
 
     std::stringstream ss(input);
-    if (!(ss >> index) || index < 0 || index > totalContacts) {
+    if (!(ss >> index) || index <= 0 || index > totalContacts) {
         std::cout << "Invalid index! Digit number between 0 and " << (totalContacts - 1) << std::endl;
         return ;
     }
-
     std::cout << " Contact details " << index << std::endl;
     std::cout << "Name: " << contactList[index].getFirstName() << std::endl;
     std::cout << "Last name: " << contactList[index].getLastName() << std::endl;
@@ -143,7 +167,6 @@ bool PhoneBook::phoneNumberVerification(const std::string& s) const {
     if (s.empty()) {
         return false;
     }
-
     for (std::string::const_iterator it = s.begin(); it != s.end(); ++it)
     {
         if (!std::isdigit(static_cast<unsigned char>(*it)))
