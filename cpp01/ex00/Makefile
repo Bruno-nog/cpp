@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 17:13:43 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/20 17:57:24 by brunogue         ###   ########.fr        #
+#    Updated: 2025/10/21 20:11:43 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  Main.cpp
+SRCS =  Main.cpp \
+	RandomChump.cpp \
+	NewZombie.cpp
 		
 OBJS_FOLDER = ./obj/
 

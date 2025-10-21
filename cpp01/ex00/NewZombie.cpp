@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:12:33 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/21 20:14:55 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/21 19:28:47 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/21 20:07:35 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-class Zombie
+Zombie* newZombie(std::string Name)
 {
-	private:
-		std::string Name;
-	
-	public:
-		Zombie(std::string Name);
-		~Zombie();
-		void announce(void)
-		{
-			std::cout << "BraiiiiiiinnnzzzZ...";
-		}
-};
-
-void	randomChump(std::string name);
-Zombie* newZombie(std::string Name);
-
-#endif
+	return (new Zombie(Name));
+}
