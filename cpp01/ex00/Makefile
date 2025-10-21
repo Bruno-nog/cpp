@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 17:13:43 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/21 20:11:43 by brunogue         ###   ########.fr        #
+#    Updated: 2025/10/21 20:26:05 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =  Main.cpp \
 	RandomChump.cpp \
+	Zombie.cpp \
 	NewZombie.cpp
-		
+
 OBJS_FOLDER = ./obj/
 
 OBJS = $(addprefix $(OBJS_FOLDER), $(SRCS:.cpp=.o))
