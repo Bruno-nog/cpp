@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 20:23:36 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/21 20:28:34 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:25:01 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,10 @@ Zombie::Zombie(std::string Name)
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie   was killed" << std::endl;
+	std::cout << "Zombie: " << "{" << Name << "}" << " was killed\n" << std::endl;
+}
+
+void Zombie::announce(void)
+{
+	std::cout << "\n" << Name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
 }

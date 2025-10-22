@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 20:07:11 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/21 20:07:24 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:25:30 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	randomChump(std::string Name)
 {
-	Zombie	UndeadNightmare(Name);
+	Zombie	Undead(Name);
 
-	UndeadNightmare.announce();
+	Undead.announce();
 }

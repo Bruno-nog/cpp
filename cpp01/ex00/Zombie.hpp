@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:12:33 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/21 20:14:55 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:02:15 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ class Zombie
 	public:
 		Zombie(std::string Name);
 		~Zombie();
-		void announce(void)
-		{
-			std::cout << "BraiiiiiiinnnzzzZ...";
-		}
+		void announce(void);
 };
 
 void	randomChump(std::string name);
