@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:12:36 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/22 19:33:59 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:38:44 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	verify_space(std::string Name)
 	unsigned long i = 0;
 	while (i < Name.length())
 	{
-		if (isspace(Name[i]))
+		if (!isspace(Name[i]))
 		{
 			return (true);
 		}
@@ -40,14 +40,10 @@ int main()
 		std::cout << "eeerrrrrrrrrrooooooooorrrrrrr!\n";
 		return (0);
 	}
-	else if (verify_space(Name))
+	else if (!verify_space(Name))
 	{
 		std::cout << "aaaaaaaaarrrrrrrrrrrrrrr\n";
 		return (0);
-	}
-	else
-	{
-		std::cout << "bannaa";
 	}
 	undead = newZombie(Name);
 	undead->announce();
