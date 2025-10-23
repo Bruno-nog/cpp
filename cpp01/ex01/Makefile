@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 18:06:30 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/22 19:24:18 by brunogue         ###   ########.fr        #
+#    Updated: 2025/10/23 18:25:42 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,26 +14,33 @@ NAME = Brainz
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp
+SRCS = Main.cpp \
+		Zombie.cpp \
+		ZombieHorde.cpp
 
-OBJS_FOLDER = /obj/
+OBJS_FOLDER = ./obj/
 
 OBJS = $(addprefix $(OBJS_FOLDER), $(SRCS:.cpp=.o))
 
 all: $(OBJS_FOLDER) $(NAME)
 
-$(NAME)
-	$(CC) $(FLAGS) -o $(OBJS)
+$(OBJS_FOLDER):
+	@mkdir -p $(OBJS_FOLDER)
 
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
+$(OBJS_FOLDER)%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
-clean: rm -rf $(OBJS_FOLDER)
+clean:
+	rm -rf $(OBJS_FOLDER)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY all clean fclean re
+.PHONY: all clean fclean re
