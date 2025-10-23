@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:49:06 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/23 18:45:21 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:07:00 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,20 @@ int main()
 		}
 		else if (Horde <= 0)
 		{
-			std::cout << "It has to be a positive value." << std::endl;
+			std::cout << "It has to be more than 0." << std::endl;
 			continue ;
-		}		
-		ArmyZombie = zombieHorde(Horde, Command);
+		}
+		int countConstructor = Horde;
+		int countDestructor = Horde;
+		while (countConstructor > 0)
+		{
+			ArmyZombie = zombieHorde(Horde, Command);
+			countConstructor--;
+		}
+		while (countDestructor > 0)
+		{		
+			delete ArmyZombie;
+			countDestructor--;
+		}
 	}
 }
