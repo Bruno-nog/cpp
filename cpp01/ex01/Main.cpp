@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:49:06 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/23 19:07:00 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/23 20:04:52 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 {
 	int			Horde = 0;
 	std::string	Command;
-	Zombie *ArmyZombie;
+	Zombie 		*ArmyZombie;
 	
 	while (1)
 	{
@@ -41,17 +41,10 @@ int main()
 			std::cout << "It has to be more than 0." << std::endl;
 			continue ;
 		}
-		int countConstructor = Horde;
-		int countDestructor = Horde;
-		while (countConstructor > 0)
-		{
-			ArmyZombie = zombieHorde(Horde, Command);
-			countConstructor--;
-		}
-		while (countDestructor > 0)
-		{		
-			delete ArmyZombie;
-			countDestructor--;
-		}
+		for (int i = 0; i < Horde; ++i)
+			ArmyZombie[i].announce();
+		ArmyZombie = zombieHorde(Horde, Command);
+		delete[] ArmyZombie;
+		
 	}
 }
