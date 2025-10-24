@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:49:06 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/24 13:38:58 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/24 13:51:00 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <sstream>
 #include "Zombie.hpp"
 #include <unistd.h>
+#include <stdio.h>
 
 int main()
 {
@@ -24,6 +25,7 @@ int main()
 	
 	while (1)
 	{
+		if (feof(stdin)) break;
 		std::cout << "Enter a number of how many Zombies you want > ";
 		std::getline(std::cin, Command);
 		if (Command.empty())
@@ -53,7 +55,6 @@ int main()
 			}
 			else
 				break ;
-			
 		}
 		sleep(1);
 		std::cout << "...\n";
