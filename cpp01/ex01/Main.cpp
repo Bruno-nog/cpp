@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:49:06 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/23 20:04:52 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/24 13:38:58 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include <sstream>
 #include "Zombie.hpp"
+#include <unistd.h>
 
 int main()
 {
@@ -41,10 +42,31 @@ int main()
 			std::cout << "It has to be more than 0." << std::endl;
 			continue ;
 		}
+		while (1)
+		{
+			std::cout << "Enter a name of how this Zombies will be called > ";
+			std::getline(std::cin, Command);
+			if (Command.empty())
+			{
+				std::cout << "Please enter a name" << std::endl;
+				continue ;
+			}
+			else
+				break ;
+			
+		}
+		sleep(1);
+		std::cout << "...\n";
+		sleep(2);
+		std::cout << "\nloading...\n\n";
+		sleep(2);
+		ArmyZombie = zombieHorde(Horde, Command);
+		std::cout << "\n";
 		for (int i = 0; i < Horde; ++i)
 			ArmyZombie[i].announce();
-		ArmyZombie = zombieHorde(Horde, Command);
+		std::cout << "\n";
 		delete[] ArmyZombie;
-		
+		std::cout << "\n";
+		break ;
 	}
 }
