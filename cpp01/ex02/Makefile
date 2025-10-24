@@ -5,20 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/22 18:06:30 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/24 15:35:18 by brunogue         ###   ########.fr        #
+#    Created: 2025/10/24 13:53:12 by brunogue          #+#    #+#              #
+#    Updated: 2025/10/24 15:29:10 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ZombieHorde
+NAME = Brain
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = Main.cpp
 
-SRCS = Main.cpp \
-		Zombie.cpp \
-		ZombieHorde.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_FOLDER = ./obj/
 

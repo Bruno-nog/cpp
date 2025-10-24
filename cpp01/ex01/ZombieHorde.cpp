@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:58:55 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/24 13:08:59 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/24 15:37:14 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,3 @@ Zombie* zombieHorde(int N, std::string name)
     }
     return Horde;
 }
-
-
-// Zombie* zombieHorde(int N, std::string name)
-// {
-// 	Zombie *Horde = new Zombie(name);
-// 	for(int i = 0; i < N; i++)
-// 	{
-// 		Horde[i].SetName(name);
-// 	}
-// 	return Horde;
-// }
