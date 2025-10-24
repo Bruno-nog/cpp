@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 17:04:04 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/24 19:39:07 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/24 17:38:59 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/24 17:39:09 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+
 #include <iostream>
-#include "Weapon.hpp"
 
-int main()
+class HumanB
 {
-	{
-		Weapon club = Weapon("crude spiked club");
+	private:
+};
 
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType();
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		
-
-		HumanB jim("jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-}
+#endif
