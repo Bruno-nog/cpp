@@ -6,12 +6,14 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 17:04:04 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/25 16:53:42 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:45:50 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
@@ -25,11 +27,12 @@ int main()
 	}
 	{
 		Weapon club = Weapon("crude spiked club");
-
 		HumanB jim("jim");
-		jim.setWeapon(club);
+		
+		jim.setWeapon(&club);
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	std::cout << std::endl;
 }

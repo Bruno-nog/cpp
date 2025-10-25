@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 17:15:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/24 19:33:36 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:38:23 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define WEAPON_HPP
 
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
 class Weapon
 {
