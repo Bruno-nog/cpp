@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 17:04:04 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/25 16:53:42 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/25 16:47:56 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/25 17:48:44 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string name, Weapon& type)
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanB jim("jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	
 }
+
+HumanA::~HumanA() {}
