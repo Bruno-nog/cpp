@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:47:56 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/25 18:43:50 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/26 13:54:09 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanA::HumanA(std::string name, Weapon& type) : type(type), name(name) {}
 
-HumanA::~HumanA() {}
+HumanA::~HumanA() {}  
 
 void	HumanA::attack(void)
 {
