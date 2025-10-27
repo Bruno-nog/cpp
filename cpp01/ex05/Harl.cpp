@@ -6,16 +6,15 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:30 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 15:52:27 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/27 16:10:45 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::harl() {}
+Harl::Harl() {}
 
-
-Harl::~harl() {}
+Harl::~Harl() {}
 
 void Harl::debug(void)
 {
@@ -40,4 +39,13 @@ void Harl::error(void)
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 	return ;
+}
+
+void Harl::complain(std::string level)
+{
+	if (level == "ERROR")
+	{
+		std::cout << "isso";
+		return ;
+	}
 }

@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/27 14:46:04 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/27 14:56:14 by brunogue         ###   ########.fr        #
+#    Updated: 2025/10/27 16:10:31 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp
+SRCS = Main.cpp \
+		Harl.cpp
 
 OBJS_FOLDER = ./objs/
 

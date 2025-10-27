@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:46:56 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 15:49:23 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/27 16:07:01 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ class Harl
 		void debug(void);
 		void error(void);
 	public:
-		Harl::harl();
-		Harl::~harl();
-}
+		Harl();
+		~Harl();
+		void complain(std::string level);
+};
 
 
 #endif
