@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:51:42 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 15:46:33 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/27 15:46:56 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/27 15:49:23 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+#define HARL_HPP
+
 #include <iostream>
 
-int main (int ac, char **av)
+class Harl
 {
-	(void)av;
-	if (ac != 2)
-	{
-		std::cerr << "Usage: ./harl <ALERT>\n";
-		std::cerr << "ALERTS: INFO, WARNING, ERROR, DEBUG" << std::endl;		
-	}
-
-	std::string alert = av[1];
+	private:
+		void warning(void);
+		void info(void);
+		void debug(void);
+		void error(void);
+	public:
+		Harl::harl();
+		Harl::~harl();
 }
+
+
+#endif
