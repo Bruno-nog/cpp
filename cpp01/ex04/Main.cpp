@@ -6,13 +6,14 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 18:52:07 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 14:45:26 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/27 18:03:49 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "Sed.hpp"
 
 int main(int ac, char **av)
 {
@@ -21,14 +22,14 @@ int main(int ac, char **av)
 		std::cerr << "Usage: ./sed <filename> <s1> <s2>" << std::endl;
 		return (1);
 	}
-	std::string filename = av[1];
+	Sed sed(av[1]);
 	std::string s1 = av[2];
 	std::string s2 = av[3];
 
-	std::ifstream infile(filename.c_str(), std::ios::binary);
+	std::ifstream infile(sed.getFileName().c_str(), std::ios::binary);
 	if (!infile)
 	{
-		std::cerr << "Error: cannot open input file " << filename << std::endl;
+		std::cerr << "Error: cannot open input file " << sed.getFileName() << std::endl;
 		return (1);
 	} else
 	{
@@ -50,7 +51,7 @@ int main(int ac, char **av)
 		}
 		res.append(content, pos, content.size() - pos);
 
-		std::string outname = filename + ".replace";
+		std::string outname = sed.getFileName() + ".replace";
 		std::ofstream outfile(outname.c_str(), std::ios::binary);
 		if (!outfile)
 		{
