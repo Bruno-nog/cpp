@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:30 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 16:10:45 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/27 17:20:12 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,26 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	if (level == "ERROR")
+	struct Pair
 	{
-		std::cout << "isso";
-		return ;
+		std::string name;
+		void (Harl::*func)();
+	};
+
+	Pair levels[] = {
+	{"DEBUG", &Harl::debug},
+	{"INFO", &Harl::info},
+	{"WARNING", &Harl::warning},
+	{"ERROR", &Harl::error}
+	};
+	
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i].name)
+		{
+			(this->*levels[i].func)();
+			return ;
+		}
 	}
+
 }

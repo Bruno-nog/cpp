@@ -6,13 +6,11 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:51:42 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/27 16:11:18 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/10/27 16:52:32 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Harl.hpp"
-
 
 int main (int ac, char **av)
 {
