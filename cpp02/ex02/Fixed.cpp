@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:43:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/28 19:35:15 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/28 19:37:33 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/28 19:38:15 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main()
-{
-	Fixed 		a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+Fixed::Fixed() {}
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+Fixed::~Fixed() {}
 
-	return (0);
-}

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:43:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/28 19:35:15 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/28 19:35:32 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/28 19:36:41 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main()
+#include <iostream>
+
+class Fixed
 {
-	Fixed 		a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return (0);
+	private:
+		int	fixedPoint;
+		const int bits;
+	public:
+		Fixed();
+		~Fixed();
 }
+
+#endif
