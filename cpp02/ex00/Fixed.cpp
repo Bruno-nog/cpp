@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 16:47:41 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/28 14:28:23 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/28 15:17:57 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/28 15:23:12 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
+Fixed::Fixed() : fixedPoint(0) {} 
 
-class Zombie
+Fixed::~Fixed() {}
+
+
+int Fixed::getRawBits(void) const
 {
-	public:
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-
-		void announce(void);
-		void SetName(const std::string& NewName);
-
-	private:
-		std::string name;
-};
-
-Zombie* zombieHorde(int N, std::string name);
-
-#endif
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->fixedPoint);
+}
+void Fixed::setRawBits(int const raw)
+{
+	this->fixedPoint = raw;
+}
