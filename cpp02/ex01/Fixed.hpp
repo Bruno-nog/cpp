@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 15:03:08 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/28 15:54:10 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/28 17:47:52 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/28 18:32:11 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@ class Fixed
 		static const int bits;
 	public:
 		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed &operator=(const Fixed &other);
 		~Fixed();
+		Fixed(const Fixed &copy);
+		Fixed(const int nbInt);
+		Fixed(const float nbFloat);
+		Fixed &operator=(const Fixed &other);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
 };
+std::ostream& operator<<(std::ostream &os, const Fixed &other);
 
 #endif

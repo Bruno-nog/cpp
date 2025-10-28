@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 15:17:57 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/28 16:22:06 by brunogue         ###   ########.fr       */
+/*   Created: 2025/10/28 18:02:06 by brunogue          #+#    #+#             */
+/*   Updated: 2025/10/28 18:35:36 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 const int Fixed::bits = 8;
 
@@ -49,4 +50,31 @@ Fixed &Fixed::operator=(const Fixed &other)
 		this->fixedPoint = other.getRawBits();
 	}
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream &os, const Fixed &other)
+{
+	os << other.toFloat();
+	return (os);
+}
+
+Fixed::Fixed(const int nbInt)
+{
+	std::cout << "Int constructor called" << std::endl;
+	fixedPoint = nbInt << bits;
+}
+Fixed::Fixed(const float nbFloat)
+{
+	std::cout << "Float constructor called" << std::endl;
+	fixedPoint = roundf(nbFloat * (1 << bits));
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)fixedPoint / (1 << bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (fixedPoint >> bits);
 }
