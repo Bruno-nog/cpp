@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   Operator.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 20:00:18 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/29 14:33:11 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/29 18:22:05 by marvin            #+#    #+#             */
+/*   Updated: 2025/10/29 18:22:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main ()
+Fixed	Fixed::operator+(const Fixed &Nb) const
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-	
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
-	return (0);
+    return (Fixed(this->toFloat() + Nb.toFloat()));
 }
+
+Fixed	operator-(const Fixed &Nb) const
+{
+    return (Fixed(this->toFloat() - Nb.toFloat()));
+}
+
+Fixed	operator*(const Fixed &Nb) const;
+{
+    return (Fixed(this->toFloat() * Nb.toFloat()));
+}
+
+Fixed	operator/(const Fixed &Nb) const
+{
+    return (Fixed(this->toFloat() / Nb.toFloat()));
+}
+
+
