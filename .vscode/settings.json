@@ -50,7 +50,10 @@
         "ctime": "cpp",
         "iomanip": "cpp",
         "fstream": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "xstring": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

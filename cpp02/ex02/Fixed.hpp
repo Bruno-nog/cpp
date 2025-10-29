@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:35:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/29 18:19:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/29 18:34:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,4 @@ class Fixed
 };
 std::ostream& operator<<(std::ostream &os, const Fixed &other);
 
-#endif
 #endif
