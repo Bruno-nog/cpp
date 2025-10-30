@@ -14,11 +14,16 @@
 
 int main ()
 {
+    std::cout << "\n";
     ClapTrap trap("Bob");
-
+    std::cout << "\n";
     trap.attack("Obo");
-    trap.takeDamage(20);
+    std::cout << "\n";
+    trap.takeDamage(4);
+    trap.takeDamage(4);
+    std::cout << "\n";
     trap.beRepaired(9);
-
+    std::cout << "\n";
     return (0);
 }
+
