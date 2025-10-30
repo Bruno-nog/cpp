@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
 int main ()
 {
-    std::cout << "something\n";
+    ClapTrap trap("bob");
+
+    trap.attack("doom");
+
+    return (0);
 }
