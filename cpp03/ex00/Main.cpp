@@ -14,9 +14,11 @@
 
 int main ()
 {
-    ClapTrap trap("bob");
+    ClapTrap trap("Bob");
 
-    trap.attack("doom");
+    trap.attack("Obo");
+    trap.takeDamage(20);
+    trap.beRepaired(9);
 
     return (0);
 }
