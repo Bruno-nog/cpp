@@ -5,20 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/28 18:38:56 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/30 14:36:44 by marvin           ###   ########.fr        #
+#    Created: 2025/10/29 21:16:45 by marvin            #+#    #+#              #
+#    Updated: 2025/10/29 21:16:45 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = ClapTrap
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = Main.cpp \
-		Fixed.cpp \
-		Operators.cpp
+		ClapTrap.cpp
 
 OBJS_FOLDER = ./objs/
 

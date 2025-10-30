@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:35:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/29 20:52:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/30 12:08:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FIXED_HPP
 
 #include <iostream>
+
+// ORTHODOX CANONICAL CLASS FORM
 
 class Fixed
 {
