@@ -16,7 +16,9 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp
+SRCS = Main.cpp \
+		ScavTrap.cpp \
+		ClapTrap.cpp
 
 OBJS_FOLDER = ./objs/
 

@@ -14,5 +14,5 @@
 
 int main ()
 {
-    std::cout << "something\n";
+    ScavTrap dart("sim");
 }

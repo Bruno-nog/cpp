@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 16:42:16 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/30 16:42:16 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/30 17:46:55 by marvin            #+#    #+#             */
+/*   Updated: 2025/10/30 17:46:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "ScavTrap.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-#include <string>
-
-class ScavTrap : public ClapTrap
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
-    public:
-        ScavTrap(const std::string &name);
-        ~ScavTrap();
+    std::cout << "ScavTrap constructed: " << Name << std::endl;
+}
 
-        // void attack(std::string &target)
-        // void guardGate();
-};
 
-#endif
+ScavTrap::~ScavTrap()
+{
+    std::cout << "ScavTrap destructed: " << Name << std::endl;
+}
