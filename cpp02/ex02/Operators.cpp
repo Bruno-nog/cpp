@@ -14,23 +14,36 @@
 
 Fixed	Fixed::operator+(const Fixed &Nb) const
 {
-    return (Fixed(this->toFloat() + Nb.toFloat()));
+    Fixed res;
+
+    res.setRawBits(this->fixedPoint + Nb.fixedPoint);
+    return res;
 }
 
 Fixed	Fixed::operator-(const Fixed &Nb) const
 {
-    return (Fixed(this->toFloat() - Nb.toFloat()));
+    Fixed res;
+
+    res.setRawBits(this->fixedPoint - Nb.fixedPoint);
+    return res;
 }
 
 Fixed	Fixed::operator*(const Fixed &Nb) const
 {
-    return (Fixed(this->toFloat() * Nb.toFloat()));
+    Fixed res;
+    long long temp = static_cast<long long>(this->fixedPoint) * static_cast<long long>(Nb.fixedPoint);
+    temp = temp >> bits;
+    res.setRawBits(static_cast<int>(temp));
+    return res;
 }
 
 Fixed	Fixed::operator/(const Fixed &Nb) const
 {
-    return (Fixed(this->toFloat() / Nb.toFloat()));
-}
+    Fixed res;
+    long long temp = static_cast<long long>(this->fixedPoint) / static_cast<long long>(Nb.fixedPoint);
+    temp = temp >> bits;
+    res.setRawBits(static_cast<int>(temp));
+    return res;}
 
 
 bool	Fixed::operator<(const Fixed &Nb) const
@@ -77,7 +90,21 @@ Fixed	Fixed::operator++(int)
     fixedPoint += 1;
     return (temp);
 }
-		
+
+Fixed&	Fixed::operator--()
+{
+    --fixedPoint;
+    return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+    Fixed temp = *this;
+    fixedPoint--;
+    return (temp);
+}
+
+
 Fixed&	Fixed::max(Fixed &N1, Fixed &N2)
 {
     return ((N1 > N2) ? N1 : N2);

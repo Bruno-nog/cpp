@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:37:33 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/29 18:38:16 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/29 20:34:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ int Fixed::toInt(void) const
 {
 	return (fixedPoint >> bits);
 }
+

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:35:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/10/29 18:34:07 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/29 20:52:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ class Fixed
 		
 		Fixed	&operator++(); //++i
 		Fixed	operator++(int); //i++
+		Fixed	&operator--(); //--i
+		Fixed	operator--(int); //i--
 		
 		static Fixed	&max(Fixed &N1, Fixed &N2);
 		static const Fixed	max(const Fixed &N1, const Fixed &N2);
