@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/25 19:11:29 by brunogue          #+#    #+#              #
-#    Updated: 2025/09/17 16:31:32 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/01 17:31:05 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = phonebook
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = PhoneBook.cpp Contact.cpp Main.cpp
+SRCS = PhoneBook.cpp Contact.cpp main.cpp
 OBJS_FOLDER = ./obj/
 OBJS = $(addprefix $(OBJS_FOLDER), $(SRCS:.cpp=.o)) 
 

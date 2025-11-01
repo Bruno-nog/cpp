@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 16:36:58 by marvin            #+#    #+#              #
-#    Updated: 2025/10/30 16:36:58 by marvin           ###   ########.fr        #
+#    Updated: 2025/11/01 17:21:28 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp \
+SRCS = main.cpp \
 		ScavTrap.cpp \
 		ClapTrap.cpp
 

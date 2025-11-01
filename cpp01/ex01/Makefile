@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 18:06:30 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/24 15:35:18 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/01 17:29:30 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp \
+SRCS = main.cpp \
 		Zombie.cpp \
 		ZombieHorde.cpp
 

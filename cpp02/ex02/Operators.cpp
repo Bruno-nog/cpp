@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Operator.cpp                                       :+:      :+:    :+:   */
+/*   Operators.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:22:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/29 18:22:05 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/01 16:57:55 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,9 @@ bool	Fixed::operator<(const Fixed &Nb) const
     return (fixedPoint < Nb.fixedPoint);
 }
 
-
 bool	Fixed::operator>(const Fixed &Nb) const
 {
     return (fixedPoint > Nb.fixedPoint);
-
 }
 
 bool	Fixed::operator<=(const Fixed &Nb) const
@@ -110,7 +108,7 @@ Fixed&	Fixed::max(Fixed &N1, Fixed &N2)
     return ((N1 > N2) ? N1 : N2);
 }
 
-const Fixed	Fixed::max(const Fixed &N1, const Fixed &N2)
+const Fixed& Fixed::max(const Fixed &N1, const Fixed &N2)
 {
     return ((N1 > N2) ? N1 : N2);
 }
@@ -120,7 +118,7 @@ Fixed&	Fixed::min(Fixed &N1, Fixed &N2)
     return ((N1 < N2) ? N1 : N2);
 }
 
-const Fixed	Fixed::min(const Fixed &N1, const Fixed &N2)
+const Fixed& Fixed::min(const Fixed &N1, const Fixed &N2)
 {
     return ((N1 < N2) ? N1 : N2);
 }

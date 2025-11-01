@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 16:57:36 by brunogue          #+#    #+#              #
-#    Updated: 2025/10/25 17:59:52 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/01 17:29:58 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Main.cpp \
+SRCS = main.cpp \
 		Weapon.cpp \
 		HumanA.cpp \
 		HumanB.cpp 
