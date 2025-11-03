@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 19:07:55 by marvin            #+#    #+#              #
-#    Updated: 2025/11/01 17:21:43 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/03 19:01:07 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
-		FragTrap.cpp
+		FragTrap.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 OBJS_FOLDER = ./objs/
 
