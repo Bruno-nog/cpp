@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 19:10:48 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 13:33:54 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:22:19 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap() : ClapTrap("Unnamed")
 
 FragTrap::~FragTrap()
 {
-    std::cout << Name << "FragTrap destructor called" << std::endl;
+    std::cout << "FragTrap destructed: " << Name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)

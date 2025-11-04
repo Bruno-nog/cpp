@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 20:54:32 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 13:31:07 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:46:09 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ void ClapTrap::attack(const std::string &target)
 {
     if (HitPoints <= 0)
     {
-        std::cout << "ClapTrap " << Name << " has no hit points and cannot attack" << std::endl;
+        std::cout << Name << " has no hit points and cannot attack" << std::endl;
         return ;
     }
     if (EnergyPoints <= 0)
     {
-        std::cout << "ClapTrap " << Name << " has no energy points and cannot attack" << std::endl;
+        std::cout << Name << " has no energy points and cannot attack" << std::endl;
         return ; 
     }
     --EnergyPoints;
-    std::cout << "ClapTrap " << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
+    std::cout << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -49,12 +49,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if (HitPoints <= 0)
     {
-        std::cout << "ClapTrap " << Name << " has no hit points and cannot be repaired." << std::endl;
+        std::cout << Name << " has no hit points and cannot be repaired." << std::endl;
         return ;
     }
     if (EnergyPoints <= 0)
     {
-        std::cout << "ClapTrap " << Name << " has no energy points and cannot be repair." << std::endl;
+        std::cout << Name << " has no energy points and cannot be repair." << std::endl;
         return ; 
     }
     --EnergyPoints;

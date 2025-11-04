@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 19:08:35 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 13:23:53 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:00 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main ()
 
     std::cout << "\n--- Extra attacks to show EP decrement ---\n";
     for (int i = 0; i < 6; ++i)
-        fraggy.attack("dummy");
+        fraggy.attack("froggy");
 
     std::cout << "\n--- End of FragTrap scope: it will be destroyed now ---\n";
 

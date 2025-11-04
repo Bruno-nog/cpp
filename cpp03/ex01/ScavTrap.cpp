@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:46:55 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/30 17:46:55 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/04 15:48:11 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
     HitPoints = 100;
     EnergyPoints = 50;
     AttackDamage = 20;
+    MaxHitPoints = 100;
     std::cout << "ScavTrap constructed: " << Name << std::endl;
 }
 
