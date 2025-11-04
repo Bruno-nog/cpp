@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
     Animal pet;
+    Cat lulu;
+    Dog fidel;
     // const Animal* meta = new Animal();
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();

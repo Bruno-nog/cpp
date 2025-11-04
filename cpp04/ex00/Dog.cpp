@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:18:51 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/04 20:09:26 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/04 20:09:51 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/04 20:12:48 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Dog.hpp"
 
-#include "Animal.hpp"
-
-class Cat : public Animal
+Dog::Dog()
 {
-	public:
-		Cat();
-		~Cat();
-};
+	this->type = "Dog";
+	std::cout << this->getType() << " Constructor called: " << this->type << std::endl;
+}
 
-#endif
+Dog::~Dog()
+{
+	std::cout << this->getType() << " Destructor called: " << this->type << std::endl;
+}

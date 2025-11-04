@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp Animal.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
 
 OBJS_FOLDER = ./objs/
 
