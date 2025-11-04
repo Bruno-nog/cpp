@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 19:08:35 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 16:15:19 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:38:53 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main ()
     ClapTrap clappy("Clappy");
     FragTrap fraggy("Fraggy");
 
+    
     std::cout << "\n--- FragTrap special action ---\n";
     fraggy.highFivesGuys();
 
@@ -30,6 +31,7 @@ int main ()
         fraggy.attack("froggy");
 
     std::cout << "\n--- End of FragTrap scope: it will be destroyed now ---\n";
+
 
     std::cout << "\n=== Only the standalone ClapTrap remains ===\n";
     clappy.attack("stage enemy");
