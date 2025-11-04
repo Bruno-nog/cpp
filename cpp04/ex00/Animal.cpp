@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:18:51 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/04 19:42:45 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/04 19:35:18 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/04 19:47:59 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
 #include "Animal.hpp"
 
-class Cat : public Animal
+Animal::Animal() : type("nao")
 {
-	public:
-		Cat();
-		~Cat();
-	
-};
+	std::cout << "Default Constructor called: " << type << std::endl;
+}
 
-#endif
+Animal::~Animal()
+{
+	std::cout << "Destructor called: " << type << std::endl;
+}
+
+std::string Animal::getType()
+{
+	return (this->type);
+}
+
