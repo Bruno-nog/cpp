@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 19:09:20 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 14:19:53 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:15:33 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class FragTrap : public ClapTrap
         FragTrap();
         ~FragTrap();
         FragTrap(std::string name);
-        FragTrap(const FragTrap &copy);
-        FragTrap& operator=(const FragTrap &FragTrap);
         void highFivesGuys(void);
 };
 

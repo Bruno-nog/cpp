@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:37:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 15:54:43 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:56:29 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,3 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (HitPoints > MaxHitPoints) HitPoints = MaxHitPoints;
     std::cout << Name << " repairs " << amount << " HP, HP = " << HitPoints << ", EP = " << EnergyPoints << std::endl;
 }
-
