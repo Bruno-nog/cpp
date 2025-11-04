@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 20:54:32 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/30 20:54:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/04 13:31:07 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0)
+ClapTrap::ClapTrap(const std::string &name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0), MaxHitPoints(10)
 {
     std::cout << "ClapTrap constructed: " << Name << std::endl;
 }
@@ -59,7 +59,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     --EnergyPoints;
     HitPoints += static_cast<int>(amount);
-    if (HitPoints > 10) HitPoints = 10;
+    if (HitPoints > MaxHitPoints) HitPoints = MaxHitPoints;
     std::cout << Name << " repairs " << amount << " HP, HP = " << HitPoints << ", EP = " << EnergyPoints << std::endl;
 }
 
