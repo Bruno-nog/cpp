@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:03:57 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 15:50:46 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:18:27 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ int main()
     std::cout << "\n=== Deep copy test (Dog) ===" << std::endl;
     Dog basicDog;
     {
-        Dog tmpDog = basicDog; // chama construtor de cópia
+        Dog tmpDog = basicDog;
         std::cout << "Temporary Dog copy created and destroyed.\n";
     }
 
     std::cout << "\n=== Deep copy test (Cat) ===" << std::endl;
     Cat basicCat;
     {
-        Cat tmpCat = basicCat; // chama construtor de cópia
+        Cat tmpCat = basicCat;
         std::cout << "Temporary Cat copy created and destroyed.\n";
     }
 

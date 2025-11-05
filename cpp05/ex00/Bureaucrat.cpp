@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:09:18 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 16:13:15 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/05 19:02:08 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/05 19:11:03 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
 
-class Brain
+Bureaucrat::Bureaucrat()
 {
-	protected:
-		std::string ideas[100];
-	
+	std::cout << "Default constructor called" << std::endl;
+}
 
-	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& copy);
-		Brain& operator=(const Brain& Brain);
-};
 
-#endif
+
+Bureaucrat::~Bureaucrat()
+{
+	std::cout << "Default destructor called" << std::endl;
+}

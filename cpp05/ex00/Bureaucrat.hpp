@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:09:18 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 16:13:15 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/05 19:01:12 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/05 19:11:28 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 
-class Brain
+class Bureaucrat
 {
-	protected:
-		std::string ideas[100];
-	
-
 	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& copy);
-		Brain& operator=(const Brain& Brain);
+		Bureaucrat();
+		~Bureaucrat();
 };
 
 #endif
