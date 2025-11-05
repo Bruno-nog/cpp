@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:18:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/04 23:30:50 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/05 11:19:32 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Animal
 {
 	protected:
 		std::string type;
-	
+
 	public:
 		Animal();
 		virtual ~Animal();

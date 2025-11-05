@@ -6,17 +6,17 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 18:02:59 by brunogue          #+#    #+#              #
-#    Updated: 2025/11/04 18:08:54 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/05 14:33:37 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Brain
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJS_FOLDER = ./objs/
 

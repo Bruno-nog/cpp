@@ -24,8 +24,8 @@ int main()
     const WrongAnimal* wc = new WrongCat();
 
     
-    wa->makeSound(); // Wrong ambient sound
-    wc->makeSound(); // também chamará WrongAnimal::makeSound por causa da falta de virtual
+    wa->makeSound();
+    wc->makeSound();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!

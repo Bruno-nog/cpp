@@ -17,10 +17,10 @@
 
 class WrongCat : public WrongAnimal
 {
-public:
-    WrongCat();
-    ~WrongCat();
-    void makeSound() const; // mesma assinatura, mas sem virtual isso NÃO é polimórfico
+    public:
+        WrongCat();
+        ~WrongCat();
+        void makeSound() const;
 };
 
 #endif

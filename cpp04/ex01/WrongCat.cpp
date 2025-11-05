@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 09:20:56 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/05 09:20:56 by marvin           ###   ########.fr       */
+/*   Created: 2025/11/05 09:21:23 by marvin            #+#    #+#             */
+/*   Updated: 2025/11/05 09:21:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#include "WrongCat.hpp"
 
-#include <iostream>
-#include <string>
-
-class WrongAnimal
+WrongCat::WrongCat()
 {
-protected:
-    std::string type;
+    this->type = "WrongCat";
+    std::cout << "WrongCat Constructor called: " << this->type << std::endl;
+}
 
-public:
-    WrongAnimal();
-    ~WrongAnimal();
-    void makeSound() const;
-    std::string getType() const;
-};
+WrongCat::~WrongCat()
+{
+    std::cout << "WrongCat Destructor called: " << this->type << std::endl;
+}
 
-#endif
+void WrongCat::makeSound() const
+{
+    std::cout << "Wrong meow..." << std::endl;
+}
