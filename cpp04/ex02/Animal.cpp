@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 19:35:18 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 15:44:51 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:11:30 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ std::string Animal::getType() const
 Animal::~Animal()
 {
     std::cout << "Destructor called: " << type << std::endl;
+}
+
+void Animal::makeSound() const
+{
+    std::cout << "it changes nothing" << std::endl;
 }
