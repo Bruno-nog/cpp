@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:12:58 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 14:13:00 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/05 14:31:36 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/05 14:49:23 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Brain.hpp"
 
-WrongAnimal::WrongAnimal() : type("wrong_nao")
+Brain::Brain()
 {
-    std::cout << "WrongAnimal Default Constructor called: " << type << std::endl;
+	std::cout << "Brain constructor called" << std::endl;
 }
 
-WrongAnimal::~WrongAnimal()
+Brain::~Brain()
 {
-    std::cout << "WrongAnimal Destructor called: " << type << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
 
-void WrongAnimal::makeSound() const
+Brain::Brain(const Brain& copy)
 {
-    std::cout << "Wrong ambient sound" << std::endl;
+	std::cout << "Brain copy constructor called" << std::endl;
+	*this = copy;
 }
 
-std::string WrongAnimal::getType() const
+Brain&	Brain::operator=(const Brain& Brain)
 {
-    return this->type;
+	if (this != &Brain)
+	{
+		for(int i = 0; i < 100; i++)
+			this->ideas[i] = Brain.ideas[i];
+	}
+	return (*this);
 }

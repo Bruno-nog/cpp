@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 16:41:28 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/05 15:35:00 by brunogue         ###   ########.fr       */
+/*   Created: 2025/11/05 15:37:37 by brunogue          #+#    #+#             */
+/*   Updated: 2025/11/05 15:45:45 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include <unistd.h>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include <iostream>
 
-int main ()
+int main()
 {
-    ClapTrap clappy("Clappy");
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-    ScavTrap scavy("Scavy");
+    std::cout << j->getType() << std::endl;
+    std::cout << i->getType() << std::endl;
 
-    std::cout << "\n--- ScavTrap actions ---\n";
-    scavy.attack("target1");
-    scavy.guardGate();
-    scavy.takeDamage(30);
-    scavy.beRepaired(20);
+    i->makeSound();
+    j->makeSound();
 
-    std::cout << "\n--- More attacks to show EP decrement ---\n";
-    scavy.attack("target2");
-    scavy.attack("target3");
-
-    std::cout << "\n--- End of ScavTrap scope: it will be destroyed now ---\n";
-
-    clappy.attack("switcheroo");
-    clappy.takeDamage(5);
-    clappy.beRepaired(3);
-
+    delete j;
+    delete i;
     return 0;
 }

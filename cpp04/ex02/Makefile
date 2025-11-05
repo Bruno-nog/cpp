@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/04 18:02:59 by brunogue          #+#    #+#              #
-#    Updated: 2025/11/05 15:50:41 by brunogue         ###   ########.fr        #
+#    Created: 2025/11/05 15:37:27 by brunogue          #+#    #+#              #
+#    Updated: 2025/11/05 15:51:19 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Brain
+NAME = Animal
 
 CC = c++
 
