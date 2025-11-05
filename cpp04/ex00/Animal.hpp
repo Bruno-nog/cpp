@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:18:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/04 20:06:35 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/04 23:30:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class Animal
 	
 	public:
 		Animal();
-		~Animal();
-		std::string getType();
+		virtual ~Animal();
+		virtual void makeSound() const;
+		std::string getType() const;
 
 };
 
