@@ -6,14 +6,18 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:02:08 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/21 16:32:23 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/21 19:19:17 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) : _name(name), _grade(grade)
 {
+	if (grade < 120)
+	{
+		throw (GradeTooHighException());
+	}
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -30,4 +34,14 @@ std::string Bureaucrat::getName(void) const
 unsigned int Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");	
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");	
 }

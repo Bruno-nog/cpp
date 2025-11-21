@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:01:12 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/21 18:06:19 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/21 18:57:26 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ class Bureaucrat
 		const std::string _name;
 		unsigned int _grade;
 	public:
-		Bureaucrat();
+		Bureaucrat(const std::string &name, unsigned int grade);
 		std::string getName(void) const;
 		unsigned int getGrade(void) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw();
-		}
+		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw();
-		}
+		};
 		~Bureaucrat();
 };
 
