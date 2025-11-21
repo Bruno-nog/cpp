@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:37:37 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 16:25:20 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:27:08 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 int main()
 {
     const Animal* j = new Dog();
+
     const Animal* i = new Cat();
 
 
     std::cout << j->getType() << std::endl;
+
     std::cout << i->getType() << std::endl;
 
     i->makeSound();

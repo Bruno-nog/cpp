@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:09:18 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/05 14:33:23 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:27:57 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ class Brain
 {
 	protected:
 		std::string ideas[100];
-	
-	
 	public:
 		Brain();
 		~Brain();
