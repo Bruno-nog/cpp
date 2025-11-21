@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:02:08 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/07 12:25:13 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:32:23 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,14 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Default destructor called" << std::endl;
+}
+
+std::string Bureaucrat::getName(void) const
+{
+	return (this->_name);
+}
+
+unsigned int Bureaucrat::getGrade(void) const
+{
+	return (this->_grade);
 }
