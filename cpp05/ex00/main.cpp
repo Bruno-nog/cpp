@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:48:44 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/21 19:19:37 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/22 14:25:03 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 int main ()
 {
-	Bureaucrat bureau("aas", 0);
+	try
+	{
+		Bureaucrat bureau("aas", 151);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
 }
