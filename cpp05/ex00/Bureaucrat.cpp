@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:02:08 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/22 14:18:09 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/11/22 18:42:38 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,27 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low!");	
+}
+
+void	Bureaucrat::gradeIncrease(void)
+{
+	this->_grade--;
+	if (this->_grade < 1)
+	{
+		std::cout << this->_grade << " is too much\n";
+		throw (Bureaucrat::GradeTooHighException());
+		return ;
+	}
+	std::cout << "grade increased to: " << this->_grade << " from " << this->_name << std::endl;
+}
+
+void	Bureaucrat::gradeDecrease(void)
+{
+	this->_grade++;
+	if (this->_grade > 150)
+	{
+		throw (Bureaucrat::GradeTooLowException());
+		return ;
+	}
+	std::cout << "grade decreased to: " << this->_grade << " from " << this->_name << std::endl;
 }

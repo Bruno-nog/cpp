@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/05 18:48:41 by brunogue          #+#    #+#              #
-#    Updated: 2025/11/22 16:27:09 by brunogue         ###   ########.fr        #
+#    Created: 2025/11/22 17:02:11 by brunogue          #+#    #+#              #
+#    Updated: 2025/11/22 17:31:21 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucraut
+NAME = maggots
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Form.cpp
 
 OBJS_FOLDER = ./objs/
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 $(OBJS_FOLDER)%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
+clean: 
 	rm -rf $(OBJS_FOLDER)
 
 fclean: clean
