@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/22 17:02:11 by brunogue          #+#    #+#              #
-#    Updated: 2025/11/22 17:31:21 by brunogue         ###   ########.fr        #
+#    Updated: 2025/11/26 17:27:08 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Form.cpp
+SRCS = main.cpp Form.cpp Bureaucrat.cpp
 
 OBJS_FOLDER = ./objs/
 
