@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = maggots
+NAME = aform
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Form.cpp Bureaucrat.cpp
+SRCS = main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 
 OBJS_FOLDER = ./objs/
 
