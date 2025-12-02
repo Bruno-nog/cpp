@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/22 17:02:11 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/02 14:19:36 by brunogue         ###   ########.fr        #
+#    Created: 2025/12/02 13:54:25 by brunogue          #+#    #+#              #
+#    Updated: 2025/12/02 14:04:19 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = form
+NAME = aform
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Form.cpp Bureaucrat.cpp
+SRCS = main.cpp
 
 OBJS_FOLDER = ./objs/
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 $(OBJS_FOLDER)%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean: 
+clean:
 	rm -rf $(OBJS_FOLDER)
 
 fclean: clean

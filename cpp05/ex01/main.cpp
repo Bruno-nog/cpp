@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 17:02:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/26 17:26:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/02 16:11:28 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main()
 {
     try
     {
-        Bureaucrat alice("Alice", 2);
-        Bureaucrat bob("Bob", 45);
+        Bureaucrat alice("second option", 2);
+        Bureaucrat bob("medium", 45);
 
-        Form tax("TaxForm", 10, 5);
-        Form permit("Permit", 50, 20);
+        Form tax("number ten", 10, 5);
+        Form permit("faraway", 50, 20);
 
         std::cout << tax << std::endl;
         std::cout << permit << std::endl;
@@ -38,11 +38,9 @@ int main()
         // Bob tries to sign permit -> grade 45 <= 50 -> should succeed
         bob.signForm(permit);
         std::cout << permit << std::endl;
-
-        // Try constructing an invalid form -> should throw
         try
         {
-            Form invalid("BadForm", 0, 10); // grade 0 invalid
+            Form invalid("BadForm", 0, 10);
         }
         catch (std::exception& e)
         {

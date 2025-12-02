@@ -18,8 +18,8 @@
 int main()
 {
     try {
-        Bureaucrat bob("Bob", 140);
-        Bureaucrat alice("Alice", 1);
+        Bureaucrat bob("faraway", 140);
+        Bureaucrat alice("big boss", 1);
 
         ShrubberyCreationForm shrub("home");
         RobotomyRequestForm robo("Marvin");

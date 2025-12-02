@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:48:44 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/22 18:40:48 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:10:02 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main ()
 		Bureaucrat bureau("big boss", 1);
 		bureau.gradeIncrease();
 		bureau.gradeIncrease();
-
 	}
 	catch(std::exception &e)
 	{
@@ -28,7 +27,7 @@ int main ()
 	std::cout << "\n";
 	try
 	{
-		Bureaucrat bureau("naked snake", 2);
+		Bureaucrat bureau("second option", 2);
 		bureau.gradeIncrease();
 		bureau.gradeDecrease();
 	}
@@ -39,9 +38,8 @@ int main ()
 	std::cout << "\n";
 	try
 	{
-		Bureaucrat bureau("venom snake", 150);
+		Bureaucrat bureau("ordinary people", 150);
 		bureau.gradeDecrease();
-
 	}
 	catch(std::exception &e)
 	{
