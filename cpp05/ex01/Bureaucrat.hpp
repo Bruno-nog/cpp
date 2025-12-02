@@ -25,19 +25,15 @@ private:
     const std::string _name;
     int _grade;
 public:
-    Bureaucrat(const std::string& name = "Nobody", int grade = 150);
+    Bureaucrat(const std::string& name("Nobody"), int grade(150));
     Bureaucrat(const Bureaucrat& other);
     Bureaucrat& operator=(const Bureaucrat& other);
     ~Bureaucrat();
-
     const std::string& getName() const;
     int getGrade() const;
-
     void incrementGrade();
     void decrementGrade();
-
     void signForm(Form& form) const;
-
     class GradeTooHighException : public std::exception
     {
     public:

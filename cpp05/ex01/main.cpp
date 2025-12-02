@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 17:02:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/02 16:11:28 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/02 18:53:25 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main()
 {
     try
     {
-        Bureaucrat alice("second option", 2);
-        Bureaucrat bob("medium", 45);
+        Bureaucrat agent("agent", 2);
+        Bureaucrat partner("partner", 45);
 
         Form tax("number ten", 10, 5);
         Form permit("faraway", 50, 20);
@@ -27,16 +27,11 @@ int main()
         std::cout << tax << std::endl;
         std::cout << permit << std::endl;
 
-        // Bob tries to sign tax -> grade 45 > 10 -> should fail
-        bob.signForm(tax);
-
-        // Alice tries to sign tax -> grade 2 <= 10 -> should succeed
-        alice.signForm(tax);
+        partner.signForm(tax);
+        agent.signForm(tax);
 
         std::cout << tax << std::endl;
-
-        // Bob tries to sign permit -> grade 45 <= 50 -> should succeed
-        bob.signForm(permit);
+        partner.signForm(permit);
         std::cout << permit << std::endl;
         try
         {

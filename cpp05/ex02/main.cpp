@@ -18,24 +18,24 @@
 int main()
 {
     try {
-        Bureaucrat bob("faraway", 140);
-        Bureaucrat alice("big boss", 1);
+        Bureaucrat faraway("faraway", 140);
+        Bureaucrat bigboss("big boss", 1);
 
-        ShrubberyCreationForm shrub("home");
-        RobotomyRequestForm robo("Marvin");
-        PresidentialPardonForm pardon("Arthur Dent");
+        ShrubberyCreationForm shrub("japan");
+        RobotomyRequestForm robo("chinese");
+        PresidentialPardonForm pardon("indian");
 
-        bob.signForm(shrub);
-        bob.executeForm(shrub); // vai falhar
+        faraway.signForm(shrub);
+        faraway.executeForm(shrub);
 
-        alice.signForm(shrub);
-        alice.executeForm(shrub); // cria arquivo
+        bigboss.signForm(shrub);
+        bigboss.executeForm(shrub);
 
-        alice.signForm(robo);
-        alice.executeForm(robo);
-
-        alice.signForm(pardon);
-        alice.executeForm(pardon);
+        bigboss.signForm(robo);
+        bigboss.executeForm(robo);
+        
+        bigboss.signForm(pardon);
+        bigboss.executeForm(pardon);
     }
     catch (std::exception &e) {
         std::cout << "Exception caught: " << e.what() << std::endl;

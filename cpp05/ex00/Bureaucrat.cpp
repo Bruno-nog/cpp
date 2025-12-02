@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:02:08 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/02 15:41:47 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/02 17:53:47 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	Bureaucrat::gradeIncrease(void)
 	this->_grade--;
 	if (this->_grade < 1)
 	{
-		std::cout << this->_grade << " is too much\n";
+		std::cout << this->_grade << " doesn't exist\n";
 		throw (Bureaucrat::GradeTooHighException());
 		return ;
 	}

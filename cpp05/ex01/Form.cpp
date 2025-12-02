@@ -28,8 +28,6 @@ Form& Form::operator=(const Form& other)
 {
     if (this != &other)
     {
-        // can't assign to const members (_name, _gradeToSign, _gradeToExecute)
-        // copy only the mutable part
         this->_isSigned = other._isSigned;
     }
     return *this;
@@ -54,16 +52,10 @@ const char* Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(const Bureaucrat& b)
 {
-    // A bureaucrat can sign if his grade is high enough.
-    // Grade 1 is the highest, so condition is: b.getGrade() <= _gradeToSign
     if (b.getGrade() <= _gradeToSign)
-    {
         _isSigned = true;
-    }
     else
-    {
         throw Form::GradeTooLowException();
-    }
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
