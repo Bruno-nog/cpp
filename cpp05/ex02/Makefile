@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SRCS = srcs/main.cpp srcs/AForm.cpp srcs/Bureaucrat.cpp srcs/ShrubberyCreationForm.cpp srcs/PresidentialPardonForm.cpp srcs/RobotomyRequestForm.cpp
 
 OBJS_FOLDER = ./objs/
 
@@ -31,6 +31,7 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_FOLDER)%.o: %.cpp
+	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
