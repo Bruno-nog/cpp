@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/02 13:54:25 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/02 14:04:19 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/03 13:08:53 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = srcs/main.cpp srcs/AForm.cpp srcs/Bureaucrat.cpp srcs/ShrubberyCreationForm.cpp srcs/PresidentialPardonForm.cpp srcs/RobotomyRequestForm.cpp
 
 OBJS_FOLDER = ./objs/
 
@@ -31,6 +31,7 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_FOLDER)%.o: %.cpp
+	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

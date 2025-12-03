@@ -29,7 +29,6 @@ void ShrubberyCreationForm::executeAction() const
         << " ()&_---()&\\&\\|&&-&&--%---()~\n"
         << "     &&     \\|||\n"
         << "             |||\n"
-        << "             |||\n"
         << "             |||\n";
     file.close();
 }

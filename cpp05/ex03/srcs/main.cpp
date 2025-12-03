@@ -17,29 +17,6 @@
 
 int main()
 {
-    try {
-        Bureaucrat bigboss("big boss", 1);
-        Bureaucrat agent("agent", 140);
-
-        ShrubberyCreationForm shrub("japan");
-        RobotomyRequestForm robo("chinese");
-        PresidentialPardonForm pardon("korean");
-
-        agent.signForm(shrub);
-        agent.executeForm(shrub);
-
-        bigboss.signForm(shrub);
-        bigboss.executeForm(shrub);
-
-        bigboss.signForm(robo);
-        bigboss.executeForm(robo);
-        
-        bigboss.signForm(pardon);
-        bigboss.executeForm(pardon);
-    }
-    catch (std::exception &e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
-    }
-
+    std::cout << "algo\n";
     return 0;
 }
