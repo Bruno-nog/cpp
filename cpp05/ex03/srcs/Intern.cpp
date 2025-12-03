@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 13:06:27 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/03 18:16:59 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:46:41 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,28 +42,26 @@ static AForm *createPardon(std::string const &target)
 	return new PresidentialPardonForm(target);
 }
 
-typedef AForm *(*FormCreator)(const std::string &target);
-
 AForm *Intern::makeForm(const std::string &name, const std::string &target) const
 {
-	const std::string names[] = {
-		"shrubbery creation",
-		"robotomy request",
-		"presidential pardon"
-	};
-	FormCreator creators[] = {
-		&createShrub,
-		&createRobot,
-		&createPardon
-	};
-	const int count = 3;
-	for (int i = 0; i < count; ++i) {
-		if (names[i] == name) {
-			AForm *form = creators[i](target);
-			std::cout << "Intern creates " << name << std::endl;
-			return form;
-		}
-	}
-	std::cout << "Intern couldn't create " << name << " because it doesn't exist" << std::endl;
-	return NULL;
+    struct FormMap {
+        std::string formName;
+        AForm *(*creator)(const std::string &);
+    };
+
+    FormMap forms[] = {
+        {"shrubbery creation",  createShrub},
+        {"robotomy request",    createRobot},
+        {"presidential pardon", createPardon}
+    };
+
+    for (int i = 0; i < 3; i++) {
+        if (forms[i].formName == name) {
+            std::cout << "Intern creates " << name << std::endl;
+            return forms[i].creator(target);
+        }
+    }
+
+    std::cout << "Intern couldn't create " << name << " because it doesn't exist" << std::endl;
+    return NULL;
 }
