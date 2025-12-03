@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/02 13:54:25 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/03 13:08:53 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/03 17:49:04 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = srcs/main.cpp srcs/AForm.cpp srcs/Bureaucrat.cpp srcs/ShrubberyCreationForm.cpp srcs/PresidentialPardonForm.cpp srcs/RobotomyRequestForm.cpp
+SRCS = srcs/main.cpp srcs/AForm.cpp srcs/Bureaucrat.cpp srcs/ShrubberyCreationForm.cpp srcs/PresidentialPardonForm.cpp srcs/RobotomyRequestForm.cpp srcs/Intern.cpp
 
 OBJS_FOLDER = ./objs/
 
