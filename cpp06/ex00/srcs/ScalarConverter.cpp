@@ -19,7 +19,66 @@
 #include <limits>
 #include <cctype>
 
+static void printAllFromDouble(double d)
+{
+    std::cout << "char: ";
+    if (std::isnan(d) || std::isinf(d) || d < 0.0 || d > 127.0)
+    {
+        std::cout << "impossible\n";
+    }
+    else
+    {
+        char c = static_cast<char>(d);
+        if (!std::isprint(static_cast<unsigned char>(c)))
+            std::cout << "Non displayable\n";
+        else
+            std::cout << "'" << c << "'\n";
+    }
 
+        std::cout << "int: ";
+    if (std::isnan(d) || std::isinf(d) ||
+        d < static_cast<double>(std::numeric_limits<int>::min()) ||
+        d > static_cast<double>(std::numeric_limits<int>::max()))
+    {
+        std::cout << "impossible\n";
+    }
+    else
+    {
+        int i = static_cast<int>(d);
+        std::cout << i << "\n";
+    }
+
+    std::cout << "float: ";
+    if (std::isnan(d))
+    {
+        std::cout << "nanf\n";
+    }
+    else if (std::isinf(d))
+    {
+        if (d > 0) std::cout << "+inff\n"; else std::cout << "-inff\n";
+    }
+    else
+    {
+        float f = static_cast<float>(d);
+        std::cout << std::fixed << std::setprecision(1) << f << "f\n";
+        std::cout.unsetf(std::ios::fixed);
+    }
+
+    std::cout << "double: ";
+    if (std::isnan(d))
+    {
+        std::cout << "nan\n";
+    }
+    else if (std::isinf(d))
+    {
+        if (d > 0) std::cout << "+inf\n"; else std::cout << "-inf\n";
+    }
+    else
+    {
+        std::cout << std::fixed << std::setprecision(1) << d << "\n";
+        std::cout.unsetf(std::ios::fixed);
+    }
+}
 
 void ScalarConverter::converter(const std::string &literal)
 {
