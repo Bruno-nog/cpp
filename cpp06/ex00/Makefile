@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = srcs/main.cpp
+SRCS = srcs/main.cpp srcs/ScalarConverter.cpp
 
 OBJS_FOLDER = ./objs/
 

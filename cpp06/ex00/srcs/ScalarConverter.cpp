@@ -19,6 +19,47 @@
 #include <limits>
 #include <cctype>
 
+static bool isCharLiteral(const std::string &s)
+{
+    if (s.size() == 1
+        && std::isprint(static_cast<unsigned char>(s[0]))
+        && !std::isdigit(static_cast<unsigned char>(s[0])))
+        return true;
+
+    if (s.size() == 3 && s[0] == '\'' && s[2] == '\'')
+        return true;
+
+    return false;
+}
+
+
+static bool isIntLiteral(const std::string &s)
+{
+    if (s.empty())
+        return false;
+    char *end = NULL; 
+    errno = 0;
+    std::strtol(s.c_str(), &end, 10);
+    return (*end == '\0' && errno != ERANGE);
+}
+
+static bool isFloatLiteral(const std::string &s)
+{
+    if (s == "nanf" || s == "+inff" || s == "-inff") return true;
+    if (s.size() < 2) return false;
+    char *end = NULL;
+    std::strtof(s.c_str(), &end);
+    return (*end == 'f' && *(end + 1) == '\0');
+}
+
+static bool isDoubleLiteral(const std::string &s)
+{
+    if (s == "nan" || s == "+inf" || s == "-inf") return true;
+    char *end = NULL;
+    std::strtod(s.c_str(), &end);
+    return (*end == '\0' && s.size() > 0);
+}
+
 static void printAllFromDouble(double d)
 {
     std::cout << "char: ";

@@ -13,6 +13,8 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
+#include <string>
+
 class ScalarConverter
 {
     public:
@@ -21,17 +23,6 @@ class ScalarConverter
         ScalarConverter();
         ScalarConverter(const ScalarConverter &);
         ScalarConverter &operator=(const ScalarConverter &);
-
-        static bool isPseudoLiteral(const std::string &s);
-        static bool isCharLiteral(const std::string &s);
-        static bool isInrLiteral(const std::string &s);
-        static bool isFloatLiteral(const std::string &s);
-        static bool isDoubleLiteral(const std::string &s);
-
-        static void printFromChar(char c);
-        static void printFromInt(long value, bool overflow);
-        static void printFromFloat(double value);
-        static void printFromDouble(double value);
-}
+};
 
 #endif
