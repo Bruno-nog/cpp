@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
     if (ac == 2)
     {
-        ScalarConverter::converter(av[1]);
+        ScalarConverter::convert(av[1]);
     }
     return (0);
 }

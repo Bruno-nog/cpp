@@ -95,9 +95,7 @@ static void printAllFromDouble(double d)
 {
     std::cout << "char: ";
     if (std::isnan(d) || std::isinf(d) || d < 0.0 || d > 127.0)
-    {
         std::cout << "impossible\n";
-    }
     else
     {
         char c = static_cast<char>(d);
@@ -122,12 +120,13 @@ static void printAllFromDouble(double d)
 
     std::cout << "float: ";
     if (std::isnan(d))
-    {
         std::cout << "nanf\n";
-    }
     else if (std::isinf(d))
     {
-        if (d > 0) std::cout << "+inff\n"; else std::cout << "-inff\n";
+        if (d > 0)
+            std::cout << "+inff\n";
+        else
+            std::cout << "-inff\n";
     }
     else
     {
@@ -138,12 +137,13 @@ static void printAllFromDouble(double d)
 
     std::cout << "double: ";
     if (std::isnan(d))
-    {
         std::cout << "nan\n";
-    }
     else if (std::isinf(d))
     {
-        if (d > 0) std::cout << "+inf\n"; else std::cout << "-inf\n";
+        if (d > 0)
+            std::cout << "+inf\n";
+        else
+            std::cout << "-inf\n";
     }
     else
     {
@@ -152,7 +152,7 @@ static void printAllFromDouble(double d)
     }
 }
 
-void ScalarConverter::converter(const std::string &literal)
+void ScalarConverter::convert(const std::string &literal)
 {
     if (isCharLiteral(literal))
     {
