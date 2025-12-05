@@ -32,32 +32,63 @@ static bool isCharLiteral(const std::string &s)
     return false;
 }
 
-
 static bool isIntLiteral(const std::string &s)
 {
     if (s.empty())
         return false;
-    char *end = NULL; 
+
+    char *end = NULL;
     errno = 0;
     std::strtol(s.c_str(), &end, 10);
-    return (*end == '\0' && errno != ERANGE);
+
+    bool result = false;
+    if (errno == ERANGE)
+        result = false;
+    else if (*end != '\0')
+        result = false;
+    else
+        result = true;
+
+    return result;
 }
 
 static bool isFloatLiteral(const std::string &s)
 {
-    if (s == "nanf" || s == "+inff" || s == "-inff") return true;
-    if (s.size() < 2) return false;
+    if (s == "nanf" || s == "+inff" || s == "-inff")
+        return true;
+
+    if (s.size() < 2)
+        return false;
+
     char *end = NULL;
+    errno = 0;
     std::strtof(s.c_str(), &end);
-    return (*end == 'f' && *(end + 1) == '\0');
+
+    bool result = false;
+    if (*end == 'f' && *(end + 1) == '\0')
+        result = true;
+    else
+        result = false;
+
+    return result;
 }
 
 static bool isDoubleLiteral(const std::string &s)
 {
-    if (s == "nan" || s == "+inf" || s == "-inf") return true;
+    if (s == "nan" || s == "+inf" || s == "-inf")
+        return true;
+
     char *end = NULL;
+    errno = 0;
     std::strtod(s.c_str(), &end);
-    return (*end == '\0' && s.size() > 0);
+
+    bool result = false;
+    if (*end == '\0' && s.size() > 0)
+        result = true;
+    else
+        result = false;
+
+    return result;
 }
 
 static void printAllFromDouble(double d)
