@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 13:06:27 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/03 18:46:41 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:00:15 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target) cons
             return forms[i].creator(target);
         }
     }
-
     std::cout << "Intern couldn't create " << name << " because it doesn't exist" << std::endl;
     return NULL;
 }
