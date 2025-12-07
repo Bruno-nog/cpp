@@ -6,13 +6,14 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 15:46:16 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/07 16:57:04 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:02:54 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+#include <stdexcept>
 
 template<typename T>
 class Array
@@ -35,3 +36,4 @@ class Array
 #include "Array.tpp"
 
 #endif
+

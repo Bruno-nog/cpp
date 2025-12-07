@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 02:32:09 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/07 02:32:09 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/07 17:58:38 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 #include <cstddef>
 
-template <typename T>
-void iter(T *array, const std::size_t lenght, void (*func)(T &))
+template <typename T, typename F>
+void iter(T *array, const std::size_t length, F func)
 {
-    for (std::size_t i = 0; i < lenght; ++i)
-    {
+    for (std::size_t i = 0; i < length; ++i)
         func(array[i]);
-    }
 }
 
 #endif
