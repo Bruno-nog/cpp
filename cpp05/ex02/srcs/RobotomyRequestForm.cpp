@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/Bureaucrat.hpp"
 #include <iostream>
 #include <cstdlib>
 
@@ -21,8 +22,12 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void RobotomyRequestForm::executeAction() const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+    if (!isSigned())
+        throw AForm::GradeTooLowException();
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
     std::cout << "BZZZZZZZZZ... DRILLING NOISES...\n";
 
     if (rand() % 2)

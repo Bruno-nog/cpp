@@ -17,7 +17,6 @@
 #include <cerrno>
 #include <cmath>
 #include <limits>
-#include <cctype>
 
 static bool isCharLiteral(const std::string &s)
 {

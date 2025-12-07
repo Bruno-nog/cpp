@@ -15,12 +15,12 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
-
 #include <cstdlib>
 #include <ctime>
 
 int main()
 {
+    std::srand(std::time(NULL));
     Intern someIntern;
     // Bureaucrat bob("iss", 1);
 

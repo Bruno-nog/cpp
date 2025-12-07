@@ -14,9 +14,12 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
+#include <ctime>
+#include <stdlib.h>
 
 int main()
 {
+    std::srand(std::time(NULL));
     try {
         Bureaucrat bigboss("big boss", 1);
         Bureaucrat agent("agent", 140);

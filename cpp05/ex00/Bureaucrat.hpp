@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:01:12 by brunogue          #+#    #+#             */
-/*   Updated: 2025/11/22 18:48:18 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/05 16:30:03 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ class Bureaucrat
 		};
 		~Bureaucrat();
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif

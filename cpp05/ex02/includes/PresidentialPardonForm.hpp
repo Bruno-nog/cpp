@@ -24,7 +24,7 @@ public:
     PresidentialPardonForm(const std::string &target);
     virtual ~PresidentialPardonForm();
 
-    virtual void executeAction() const;
+    virtual void execute(Bureaucrat const &executor) const;
 };
 
 #endif

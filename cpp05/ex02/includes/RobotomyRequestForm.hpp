@@ -24,7 +24,7 @@ public:
     RobotomyRequestForm(const std::string &target);
     virtual ~RobotomyRequestForm();
 
-    virtual void executeAction() const;
+    virtual void execute(Bureaucrat const &executor) const;
 };
 
 #endif

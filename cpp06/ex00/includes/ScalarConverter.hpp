@@ -23,6 +23,7 @@ class ScalarConverter
         ScalarConverter();
         ScalarConverter(const ScalarConverter &);
         ScalarConverter &operator=(const ScalarConverter &);
+        ~ScalarConverter();
 };
 
 #endif

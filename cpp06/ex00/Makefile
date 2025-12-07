@@ -14,7 +14,7 @@ NAME = ScalarConverter
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = srcs/main.cpp srcs/ScalarConverter.cpp
 
@@ -34,7 +34,7 @@ $(OBJS_FOLDER)%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
+clean: 
 	rm -rf $(OBJS_FOLDER)
 
 fclean: clean
