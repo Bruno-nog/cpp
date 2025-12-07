@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 16:41:14 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/07 13:20:42 by brunogue         ###   ########.fr       */
+/*   Created: 2025/12/07 15:46:16 by brunogue          #+#    #+#             */
+/*   Updated: 2025/12/07 16:57:04 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-#include <string>
 
-class ScalarConverter
+template<typename T>
+class Array
 {
-    public:
-        static void convert(const std::string &literal);
-    private:
-        ScalarConverter();
-        ScalarConverter(const ScalarConverter &);
-        ScalarConverter &operator=(const ScalarConverter &);
-        ~ScalarConverter();
+	private:
+		T* _data;
+		unsigned int _size;
+	public:
+		Array();
+		Array(unsigned int n);
+		Array(const Array &other);
+		Array &operator=(const Array &other);
+		~Array();
+
+		T& operator[](unsigned int index);
+		const T& operator[](unsigned int index) const;
+		unsigned int size() const;
 };
+
+#include "Array.tpp"
 
 #endif
