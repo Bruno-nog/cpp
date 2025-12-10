@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/07 20:14:25 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/09 14:27:13 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/10 17:58:33 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = something
+NAME = easyfind
 
 CC = c++ 
 
