@@ -25,7 +25,7 @@ int main()
     std::cout << sp.longestSpan() << std::endl;
     
 
-    std::cout << "----- bigger test (10k random numbers using range add) -----" << std::endl;
+    std::cout << "----- bigger test -----" << std::endl;
     {
     const unsigned int COUNT = 10000;
     Span big(COUNT);
@@ -45,7 +45,5 @@ int main()
     std::cout << "Error: " << e.what() << std::endl;
     }
     }
-
-
     return 0;
 }
