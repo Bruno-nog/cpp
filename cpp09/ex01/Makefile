@@ -6,17 +6,17 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/13 18:55:41 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/13 19:06:44 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/13 20:22:33 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  PmergeMe
+NAME = RPN
 
 CC = c++ 
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp RPN.cpp
 
 OBJS_FOLDER = ./objs/
 

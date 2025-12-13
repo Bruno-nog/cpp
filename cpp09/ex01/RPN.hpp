@@ -6,12 +6,18 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 18:55:45 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 19:16:42 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:20:01 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RPN_HPP
 #define RPN_HPP
+
+#include <stack>
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include <sstream>
 
 class RPN
 {
