@@ -1,33 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 17:22:25 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 12:55:01 by brunogue         ###   ########.fr       */
+/*   Created: 2025/12/13 16:11:20 by brunogue          #+#    #+#             */
+/*   Updated: 2025/12/13 16:12:28 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#include "../includes/BitcoinExchange.hpp"
 
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <algorithm>
-
-class NotFoundException : public std::exception
-{
-	public:
-		virtual const char* what() const throw()
-		{
-			return "easyfind: value not found";
-		}
-};
-
-#include "easyfind.tpp"
-
-#endif

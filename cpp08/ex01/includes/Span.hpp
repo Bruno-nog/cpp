@@ -17,9 +17,6 @@
 #include <algorithm>
 #include <exception>
 #include <limits>
-#include <iterator>
-#include <stdexcept>
-#include <cstdlib>
 #include <ctime>
 
 class Span
