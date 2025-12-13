@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = srcs/main.cpp srcs/BitcoinExchange.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 
 OBJS_FOLDER = ./objs/
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/BitcoinExchange.hpp"
+#include "BitcoinExchange.hpp"
 
 int main (int ac, char **av)
 {

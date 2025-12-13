@@ -6,11 +6,11 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:11:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 18:28:32 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 18:53:08 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/BitcoinExchange.hpp"
+#include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange() {}
 
@@ -32,8 +32,14 @@ bool BitcoinExchange::isValidValue(const std::string &value) const
 
 	if (*end != '\0')
 		return (false);
-	if (val < 1 || val > 1000)
-		return false;
+	if (val < 1)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+	}
+	if (val > 1000)
+	{
+		std::cout << "Error: too large a number." << std::endl;
+	}
 	return true;
 }
 
