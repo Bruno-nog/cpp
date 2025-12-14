@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 18:55:45 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 20:20:01 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 21:53:38 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class RPN
 		RPN& operator=(const RPN& other);
 		~RPN();
 		int evaluate(const std::string& exoression);
-
 };
 
 #endif

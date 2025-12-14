@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 18:55:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 20:29:19 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 22:08:29 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int RPN::applyOperation(const std::string& op, int a, int b) const
 	else if (op == "/")
 	{
 		if (b == 0)
-		throw (std::runtime_error("division by zero"));
-			return (a / b);
+			throw (std::runtime_error("division by zero"));
+		return (a / b);
 	}
 	throw (std::runtime_error("invalid operator"));
 }
