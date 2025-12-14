@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 18:55:38 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 20:19:16 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:11:10 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int ac, char **av)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Error: " << e.what() << '\n';
+		std::cerr << e.what() << '\n';
 		return (0);
 	}
 }

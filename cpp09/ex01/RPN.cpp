@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 18:55:43 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 22:08:29 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:11:26 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int RPN::evaluate(const std::string& expression)
 		else if (isOperator(token))
 		{
 			if (_stack.size() < 2)
-				throw (std::runtime_error("invalid expression"));
+				throw (std::runtime_error("Error"));
 			int b = this->_stack.top();
 			this->_stack.pop();
 			int a = this->_stack.top();
@@ -73,7 +73,7 @@ int RPN::evaluate(const std::string& expression)
 			this->_stack.push(applyOperation(token, a, b));
 		}
 		else
-			throw (std::runtime_error("invalid expression"));
+			throw (std::runtime_error("Error"));
 	}
 	if (this->_stack.size() != 1)
 		throw (std::runtime_error("missing operand"));
