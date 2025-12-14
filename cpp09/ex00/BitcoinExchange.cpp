@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:11:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 18:53:08 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 21:47:45 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,36 @@ BitcoinExchange::~BitcoinExchange() {}
 
 bool BitcoinExchange::isValidValue(const std::string &value) const
 {
-	char *end;
-	double val = std::strtod(value.c_str(), &end);
+    char *end;
+    errno = 0;
+    double val = std::strtod(value.c_str(), &end);
 
-	if (*end != '\0')
-		return (false);
-	if (val < 1)
-	{
-		std::cout << "Error: not a positive number." << std::endl;
-	}
-	if (val > 1000)
-	{
-		std::cout << "Error: too large a number." << std::endl;
-	}
-	return true;
+    if (*end != '\0')
+    {
+        std::cout << "Error: bad input => " << value << std::endl;
+        return false;
+    }
+    if (errno == ERANGE || val > 1000)
+    {
+        std::cout << "Error: too large a number." << std::endl;
+        return false;
+    }
+    if (val < 0)
+    {
+        std::cout << "Error: not a positive number." << std::endl;
+        return false;
+    }
+    return true;
 }
 
-bool BitcoinExchange::isValidDate(const std::string &date) const
+
+bool BitcoinExchange::isValidKey(const std::string &key) const
 {
-	if (date.size() != 10 || date[4] != '-' || date[7] != '-')
+	if (key.size() != 10 || key[4] != '-' || key[7] != '-')
 		return false;
-	int year = std::atoi(date.substr(0, 4).c_str());
-	int month = std::atoi(date.substr(5, 2).c_str());
-	int day = std::atoi(date.substr(8, 2).c_str());
+	int year = std::atoi(key.substr(0, 4).c_str());
+	int month = std::atoi(key.substr(5, 2).c_str());
+	int day = std::atoi(key.substr(8, 2).c_str());
 
 	if (year < 2009 || month < 1 || month > 12 || day < 1 || day > 31)
 		return false;
@@ -72,35 +79,32 @@ void BitcoinExchange::processInputFile(const std::string &filename) const
 			continue;
 
 		std::stringstream ss(line);
-		std::string date, valueStr;
-		if (!std::getline(ss, date, '|') || !std::getline(ss, valueStr)) {
+		std::string key, valueStr;
+		if (!std::getline(ss, key, '|') || !std::getline(ss, valueStr)) {
 				std::cout << "Error: bad input => " << line << std::endl;
 				continue;
 		}
 
-		//remove extra spaces
-		if (!date.empty() && date[date.size() - 1] == ' ')
-			date.erase(date.size() - 1);
+		if (!key.empty() && key[key.size() - 1] == ' ')
+			key.erase(key.size() - 1);
 		if (!valueStr.empty() && valueStr[0] == ' ')
 			valueStr.erase(0, 1);
-		if (!isValidDate(date)) {
-			std::cout << "Error: bad input => " << line << std::endl;
+		if (!isValidKey(key)) {
 			continue;
 		}
 		if (!isValidValue(valueStr)) {
-			std::cout << "Error: invalid value => " << valueStr << std::endl;
 			continue;
 		}
 
 		double value = std::atof(valueStr.c_str());
 
-		std::map<std::string, double>::const_iterator it = this->_data.lower_bound(date);
+		std::map<std::string, double>::const_iterator it = this->_data.lower_bound(key);
 		if (it == this->_data.end())
 			--it;
 
-		else if (it->first != date) {
+		else if (it->first != key) {
 			if (it == _data.begin()) {
-				std::cout << "No early date available for " << date << std::endl;
+				std::cout << "No early date available for " << key << std::endl;
 				continue;
 			}
 			--it;
@@ -111,7 +115,7 @@ void BitcoinExchange::processInputFile(const std::string &filename) const
 		// std::cout << "it->second: " << it->second << std::endl;
 		double result = value * it->second;
 		// std::cout << "result: " << result << std::endl;
-		std::cout << date << " => " << value << " = " << result << std::endl;
+		std::cout << key << " => " << value << " = " << result << std::endl;
 	}
 }
 
@@ -128,12 +132,12 @@ void BitcoinExchange::loadDataBase(const std::string &filename)
 	while (std::getline(file, line))
 	{
 		std::stringstream ss(line);
-		std::string date;
-		std::string priceString;
-		if (!std::getline(ss, date, ',') || !std::getline(ss, priceString))
+		std::string key;
+		std::string value;
+		if (!std::getline(ss, key, ',') || !std::getline(ss, value))
 			continue;
 
-		double price = std::atof(priceString.c_str());
-		_data[date] = price;
+		double price = std::atof(value.c_str());
+		_data[key] = price;
 	}
 }

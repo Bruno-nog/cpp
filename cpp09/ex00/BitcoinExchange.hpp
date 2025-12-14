@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:11:17 by brunogue          #+#    #+#             */
-/*   Updated: 2025/12/13 18:23:36 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/12/13 21:16:10 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class BitcoinExchange
 	private:
 		std::map<std::string, double> _data;
 		bool isValidValue(const std::string &value) const;
-		bool isValidDate(const std::string &date) const;
+		bool isValidKey(const std::string &key) const;
 	public:
 		BitcoinExchange();
 		BitcoinExchange(const BitcoinExchange &other);
