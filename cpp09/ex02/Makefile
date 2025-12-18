@@ -6,13 +6,13 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/13 22:16:45 by brunogue          #+#    #+#              #
-#    Updated: 2025/12/13 23:17:51 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/18 20:24:19 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
-CC = c++ 
+CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -22,24 +22,46 @@ OBJS_FOLDER = ./objs/
 
 OBJS = $(addprefix $(OBJS_FOLDER), $(SRCS:.cpp=.o))
 
-all: $(OBJS_FOLDER) $(NAME)
+# ================= COLORS =================
+RESET   = \033[0m
+BOLD    = \033[1m
+RED     = \033[31m
+GREEN   = \033[32m
+YELLOW  = \033[33m
+BLUE    = \033[34m
+CYAN    = \033[36m
+
+# ================= RULES ==================
+
+all: banner $(OBJS_FOLDER) $(NAME)
+
+banner:
+	@echo "$(CYAN)$(BOLD)====================================$(RESET)"
+	@echo "$(CYAN)$(BOLD)   Building $(NAME)$(RESET)"
+	@echo "$(CYAN)$(BOLD)====================================$(RESET)"
 
 $(OBJS_FOLDER):
 	@mkdir -p $(OBJS_FOLDER)
+	@echo "$(BLUE)[DIR]$(RESET)  objs folder created"
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$(YELLOW)[LINK]$(RESET) linking objects"
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)✔ Build complete: $(NAME)$(RESET)"
 
 $(OBJS_FOLDER)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(FLAGS) -c $< -o $@
+	@echo "$(CYAN)[CC]$(RESET)   $<"
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_FOLDER)
+	@echo "$(RED)[CLEAN]$(RESET) removing objects"
+	@rm -rf $(OBJS_FOLDER)
 
 fclean: clean
-	rm -rf $(NAME)
+	@echo "$(RED)[FCLEAN]$(RESET) removing binary"
+	@rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re banner

@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 18:52:39 by brunogue          #+#    #+#              #
-#    Updated: 2025/11/01 17:30:09 by brunogue         ###   ########.fr        #
+#    Updated: 2025/12/18 17:21:00 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,32 +14,55 @@ NAME = sed
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
 		Sed.cpp
 
-OBJS_FOLDER = ./obj/
+OBJS_FOLDER = ./objs/
 
 OBJS = $(addprefix $(OBJS_FOLDER), $(SRCS:.cpp=.o))
 
-all: $(OBJS_FOLDER) $(NAME)
+# ================= COLORS =================
+RESET   = \033[0m
+BOLD    = \033[1m
+RED     = \033[31m
+GREEN   = \033[32m
+YELLOW  = \033[33m
+BLUE    = \033[34m
+CYAN    = \033[36m
+
+# ================= RULES ==================
+
+all: banner $(OBJS_FOLDER) $(NAME)
+
+banner:
+	@echo "$(CYAN)$(BOLD)====================================$(RESET)"
+	@echo "$(CYAN)$(BOLD)   Building $(NAME)$(RESET)"
+	@echo "$(CYAN)$(BOLD)====================================$(RESET)"
 
 $(OBJS_FOLDER):
 	@mkdir -p $(OBJS_FOLDER)
+	@echo "$(BLUE)[DIR]$(RESET)  objs folder created"
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$(YELLOW)[LINK]$(RESET) linking objects"
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)✔ Build complete: $(NAME)$(RESET)"
 
 $(OBJS_FOLDER)%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	@mkdir -p $(dir $@)
+	@echo "$(CYAN)[CC]$(RESET)   $<"
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_FOLDER)
+	@echo "$(RED)[CLEAN]$(RESET) removing objects"
+	@rm -rf $(OBJS_FOLDER)
 
 fclean: clean
-	rm -rf $(NAME)
+	@echo "$(RED)[FCLEAN]$(RESET) removing binary"
+	@rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re banner
