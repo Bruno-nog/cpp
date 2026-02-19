@@ -42,9 +42,9 @@ std::vector<int> generateInsertionOrder(size_t n);
 int jacobsthalNumber(int n);
 
 template <typename T>
-void insertPendantsBinary(T& mainChain, const T &pendants)
+void insertLosersBinary(T& mainChain, const T &losers)
 {
-    std::vector<int> insertionOrder = generateInsertionOrder(pendants.size());
+    std::vector<int> insertionOrder = generateInsertionOrder(losers.size());
 
     for (size_t i = 0; i < insertionOrder.size(); ++i)
     {
@@ -52,9 +52,9 @@ void insertPendantsBinary(T& mainChain, const T &pendants)
         if (rawIndex <= 0)
             continue;
         size_t index = static_cast<size_t>(rawIndex - 1);
-        if (index >= pendants.size())
+        if (index >= losers.size())
             continue;
-        int valueToInsert = pendants[index];
+        int valueToInsert = losers[index];
         typename T::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), valueToInsert);
         mainChain.insert(pos, valueToInsert);
     }
@@ -87,7 +87,7 @@ Container fordJohnsonSort(Container sequence)
         losers.push_back(leftoverValue);
 
     Container sortedMain = fordJohnsonSort<Container>(winners);
-    insertPendantsBinary(sortedMain, losers);
+    insertLosersBinary(sortedMain, losers);
     return sortedMain;
 }
 
